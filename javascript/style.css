@@ -20,15 +20,17 @@ h1 {
     color: rgb(255, 253, 248);
 }
 
+            
+
 h2 {
-    color: darkgoldenrod;
+    color: rgb(135, 96, 0);
 }
 
 aside {
     display: block; 
     font-size: 10pt;
     text-align: justify;
-    background-color: #44749d;
+    background-color: #00325d;
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 10px;

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 15</title>
+
+
+    <script>
+        
+    let t1 = prompt('Digite um de uma das ponta do triangulo: ', '');
+    let t2 = prompt('Digite um de uma das ponta do triangulo: ', '');
+    let t3 = prompt('Digite um de uma das ponta do triangulo: ', '');
+
+    t1 = parseFloat(t1);
+    t2 = parseFloat(t2);
+    t3 = parseFloat(t3);
+
+    
+    document.write('<br>Lado 1: ', t1);
+    document.write('<br>Lado 2: ', t2);
+    document.write('<br>Lado 3: ', t3);
+
+    if( t1 == t2 && t3 == t1 && t3){
+        document.write(' Todos os lados são iguais esse triangulo  <font color=blue><b> é um triangulo Equilátero</b></font>');
+
+    } else if (t1 == t2 || t3 == t1 || t3) {
+        document.write(' Apenas um lado é igual <font color=blue><b> é um triangulo isósceles</b></font>');
+
+    } else {
+        document.write(' Todos os lados são diferentes <font color=blue><b>é um triangulo escaleno</b></font>');
+    }
+
+    </script>
+</head>
+
+<body>
+    
+</body>
+</html>

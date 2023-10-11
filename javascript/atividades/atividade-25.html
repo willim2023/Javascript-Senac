@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 25</title>
+    <a href=""></a>
+
+    <!--atividade 25-->
+</head>
+<body>
+
+    <h1>Funções de callback em Javascript</h1>
+
+    <button id="meuBotao" onclick='mostrarMensagem()'>Alterar o fundo para vermelho</button>
+    <button id="meuBotao2" onclick='mostrarMensagem2()'>Alterar o fundo para branco</button>
+    <br>
+    <button id="meuBotao3" onclick='mostrarMensagem3()'>Mensagem do alert</button>
+    <button id="meuBotao4" onclick='mostrarMensagem4()'>Mensagem da Pagina</button>  
+    
+    
+    <script>
+
+        function mostrarMensagem(){
+            var body = document.body;
+            body.style.background = "red"
+        }
+
+        function mostrarMensagem2(){
+            var body = document.body;
+            body.style.background = "white"
+        }
+
+        function mostrarMensagem3(){
+            document.write('Adoro javascript')
+            
+        }
+
+        function mostrarMensagem4(){
+            document.write('Professor e um excelente profissional')
+           
+        }
+        
+
+        // Função de callback que mostra uma mensagem na tela
+        alert('Cristiano e um execelente profissional.');
+        
+        </script>
+
+</body>
+</html>
