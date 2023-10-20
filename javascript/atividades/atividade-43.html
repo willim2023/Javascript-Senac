@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 43</title>
+
+    <style>
+        body{
+            background-color: rgba(17, 0, 255, 0.439);
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <!--Consulta endereço por cep-->
+
+    <script>
+        function consultarCep(){
+            var cep = document.getElementById('cep').value;
+
+            // Verifica se o cep possui apenas números - regex
+            if (!cep.match(/^[-0-9]+$/)) {
+                alert('O CEP deve conter apenas números.');
+                return;
+            }
+
+
+            // consulta o cep no ViaCep
+            $.getJSON('https://viacep.com.br/ws/' + cep + '/json/' , function(data){
+                if (!data.erro) {
+                    document.getElementById('logradouro').value = data.logradouro;
+                    document.getElementById('bairro').value = data.bairro;
+                    document.getElementById('cidade').value = data.localidade;
+                    document.getElementById('estado').value = data.uf;
+                }else {
+                    alert('CEP não encontrado');
+                }
+                
+                });
+            
+            }
+
+    </script>
+</head>
+<body>
+
+    <form>
+        <center>
+            <br>
+            <h1>Consulta Endereço por CEP</h1>
+            <div>
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" maxlength="9" onblur="consultarCep()" required>
+
+                <!--maxlength = sao os numero de caracteres que podemos digitar-->
+            </div>
+
+            <br>
+
+            <div>
+                <label for="logradouro">Logradouro</label>
+                <input type="text" id="logradouro" name="logradouro">
+
+            </div>
+
+            <br>
+
+            <div>
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro" name="bairro">
+            </div>
+
+            <br>
+
+
+            <div>
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" name="cidade">
+
+            </div>
+
+            <br>
+
+            <div>
+                <label for="estado">Estado</label>
+                <input type="text" id="estado" name="estado">
+
+            </div>
+        </center>
+
+
+    </form>
+    
+</body>
+<script>
+    $(document).ready(function (){
+        var $campo = $("#cep");
+        $campo.mask('00000-000', {reverse:true});
+
+    })
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+</html>
